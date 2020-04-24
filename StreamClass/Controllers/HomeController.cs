@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StreamClass.Models;
+using WebApplication1.Models;
 
-namespace StreamClass.Controllers
+namespace WebApplication1.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
-        public IActionResult Index()//test
+        public IActionResult Index()
         {
             return View();
         }
@@ -20,6 +22,7 @@ namespace StreamClass.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
