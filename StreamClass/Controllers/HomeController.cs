@@ -17,7 +17,19 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+
+
+        public IActionResult Conditions()
+        {
+            return View();
+        }
+
+        public IActionResult Mentions()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
         {
             return View();
         }
