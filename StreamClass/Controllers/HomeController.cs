@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Models;
+using StreamClass.Models;
 
-namespace WebApplication1.Controllers
+namespace StreamClass.Controllers
 {
     [Authorize]
     public class HomeController : Controller
