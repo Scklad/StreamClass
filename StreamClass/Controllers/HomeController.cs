@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StreamClass.Models;
-using System.Diagnostics;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
@@ -29,6 +28,11 @@ namespace StreamClass.Controllers
         }
 
         public IActionResult Video()
+        {
+            return View();
+        }
+
+        public IActionResult Cours()
         {
             return View();
         }

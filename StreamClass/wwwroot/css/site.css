@@ -130,3 +130,7 @@ body {
     color: #ABABAB;
     font-weight: 400;
 }
+
+.min-box {
+    min-height: 310px;
+}
