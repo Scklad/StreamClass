@@ -42,8 +42,9 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #F2F2F2;
 }
 .footer {
     position: absolute;
@@ -86,9 +87,8 @@ body {
 }
 
 .align-img-right {
-    align-items: end;
+    align-items:end;
 }
-
 .boxabo {
     min-height: 180px;
     margin-bottom: 5px;
@@ -101,7 +101,6 @@ body {
     align-items: center;
     align-content: center;
 }
-
 .box {
     margin-bottom: 5px;
     border-radius: 6px;
@@ -110,8 +109,8 @@ body {
     padding: 10px 15px;
     background-color: #fff;
     border: 1px solid #ddd;
-    align-items: center;
-    align-content: center;
+    align-items:center;
+    align-content:center;
 }
 
 .panel-title {
