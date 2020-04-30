@@ -13,9 +13,10 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
               crossorigin="anonymous"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/video.css" />
 </head>
 <body>
     <header>
@@ -27,32 +28,32 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
                     <ul class="navbar-nav flex-grow-1">
-                        <!-- <li class="nav-item">
-         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Accueil</a>
-     </li>-->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Cours</a>
+                        </li>
+                        <!--
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </li>-->
                     </ul>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">S'inscrire</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Se connecter</a>
-                    </li>
+                    <partial name="_LoginPartial" />
                 </ul>
             </div>
         </nav>
     </header>
     <div class="container">
-        <!--  <partial name="_CookieConsentPartial" />-->
+        <!-- <partial name="_CookieConsentPartial" />-->
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted color-footer">
-        <div class="container text-center">
+    <footer class="border-top footer text-muted">
+        <div class="container">
             &copy; 2020 - StreamClass - <a asp-area="" asp-controller="Home" asp-action="Conditions">Conditions d'utilisation</a> -
             <a asp-area="" asp-controller="Home" asp-action="Mentions">Mentions légales</a> -
             <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
