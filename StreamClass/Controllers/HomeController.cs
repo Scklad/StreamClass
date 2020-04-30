@@ -15,9 +15,17 @@ namespace StreamClass.Controllers
             return View();
         }
 
-
+        public IActionResult Abonnement()
+        {
+            return View();
+        }
 
         public IActionResult Conditions()
+        {
+            return View();
+        }
+
+        public IActionResult Facture()
         {
             return View();
         }

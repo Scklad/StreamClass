@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Facture";
+}
+<script>
+    function myFunction() {
+        window.print();
+    }
+</script>
+
+    <div style="background-color: #000000; height: 10px;"></div>
+
+    <div class="container-fluid pt-2 pt-md-4 px-md-5">
+
+        <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td class="border-0">
+                        <div class="row">
+                            <div class="col-md text-center text-md-left mb-3 mb-md-0">
+                                <img class="logo img-fluid mb-3" src="@Url.Content("~/images/logo-streamclass.png")" style="max-height: 180px;" />
+                                <br>
+
+                                <h2 class="mb-1">StreamClass</h2>
+                                Quai Georges 5, 76600 Le Havre<br>
+                                commercial@streamclass.fr<br>
+                                <strong>streamclass.fr</strong>
+                            </div>
+
+                            <div class="col text-center text-md-right">
+
+                                <div class="d-none d-md-block">
+                                    <h1>Facturé à</h1>
+                                </div>
+
+                                <h4 class="mb-0">Omer Soumbou</h4>
+
+                                Quai Georges 4<br />
+                                76600, Le Havre<br />
+                                contact@client.fr<br />
+
+                                <h5 class="mb-0 mt-3">28 mai, 2020</h5>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Récapitulatif</th>
+                    <th class="text-right">Prix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <h5 class="mb-1">Forfait standard Mensuel</h5>
+                        Renouvellement automatique à chaque fin de période
+                    </td>
+
+                    <td class="font-weight-bold align-middle text-right text-nowrap">12,99 €</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="text-right border-0 pt-4"><h5>Total : 12,99 €</h5></td>
+                </tr>
+        </table>
+
+        <h5 class="text-center pt-2">Merci de votre achat !</h5>
+        <div class="text-center">
+            <button class="btn btn-primary hidden-print" onclick="myFunction()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Imprimer</button>
+            <button type="button" class="btn btn-secondary">Voir les cours</button>
+        </div>
+    </div>
