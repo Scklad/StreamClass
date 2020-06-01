@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using StreamClass.Models;
 using System.Diagnostics;
 using System.IO;
-using Microsoft.AspNetCore.Hosting;
 
 namespace StreamClass.Controllers
 {
@@ -25,6 +20,26 @@ namespace StreamClass.Controllers
         }
 
         public IActionResult Video()
+        {
+            return View();
+        }
+
+        public IActionResult Competence()
+        {
+            return View();
+        }
+
+        public IActionResult ParcoursPerso()
+        {
+            return View();
+        }
+
+        public IActionResult SelectionModule()
+        {
+            return View();
+        }
+
+        public IActionResult SelectionVideo()
         {
             return View();
         }
