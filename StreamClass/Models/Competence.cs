@@ -11,14 +11,8 @@ namespace StreamClass.Models
         public int Id { get; set; }
         [Required]
         public string Nom { get; set; }
-        [Required]
-        public int IdSousTheme { get; set; }
 
         #region Foreign key
-        [ForeignKey("IdSousTheme")]
-        [InverseProperty("Competences")]
-        public virtual SousTheme SousTheme { get; set; }
-
         public virtual List<ModuleCompetence> ModulesCompetences { get; set; }
         public virtual List<SousThemeCompetence> SousThemesCompetences { get; set; }
         #endregion

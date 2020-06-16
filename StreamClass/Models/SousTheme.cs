@@ -19,7 +19,6 @@ namespace StreamClass.Models
         [InverseProperty("SousThemes")]
         public virtual ThemeCompetence ThemeCompetence { get; set; }
 
-        public virtual List<Competence> Competences { get; set; }
         public virtual List<SousThemeCompetence> SousThemesCompetences { get; set; }
         #endregion
     }
