@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using StreamClass.Context;
 using StreamClass.Models;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace StreamClass.Controllers
 {
@@ -11,21 +14,22 @@ namespace StreamClass.Controllers
     public class HomeController : Controller
     {
         private readonly IHostingEnvironment _variable_env;
-        private readonly string _cheminVideo = "\\Videos\\video.mp4";
-
 
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Video()
-        {
-            return View();
-        }
-
         public IActionResult Competence()
         {
+            using (SQLServerContext db = new SQLServerContext())
+            {
+                var test = from comp in db.Competences
+                           join sousthem in db.SousThemesCompetences
+                           on comp.Id equals sousthem.IdCompetence
+                           select comp;
+            }
+
             return View();
         }
 
@@ -41,7 +45,26 @@ namespace StreamClass.Controllers
 
         public IActionResult SelectionVideo()
         {
-            return View();
+            List<Video> listVideos = new List<Video>();
+
+            using (SQLServerContext db = new SQLServerContext())
+            {
+                listVideos = db.Videos.ToList<Video>();
+            }
+
+            return View(listVideos);
+        }
+
+        public IActionResult Video(int id)
+        {
+            Video model;
+
+            using (SQLServerContext db = new SQLServerContext())
+            {
+                model = db.Videos.Where(x => x.Id == id).FirstOrDefault();
+            }
+
+            return View(model);
         }
 
         public IActionResult Conditions()
@@ -71,9 +94,17 @@ namespace StreamClass.Controllers
             _variable_env = variableEnv;
         }
 
-        public IActionResult GetVideo()
+        public IActionResult GetVideo(int id)
         {
-            string cheminVideoComplet = _variable_env.ContentRootPath + _cheminVideo;
+            //Récupération des données de la vidéo à partir de l'id
+            Video model;
+
+            using (SQLServerContext db = new SQLServerContext())
+            {
+                model = db.Videos.Where(x => x.Id == id).FirstOrDefault();
+            }
+
+            string cheminVideoComplet = _variable_env.ContentRootPath + model.Emplacement;
 
             FileStream stream = new FileStream(cheminVideoComplet, FileMode.Open);
             return new FileStreamResult(stream, "video/mp4");
