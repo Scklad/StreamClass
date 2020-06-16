@@ -35,6 +35,7 @@ namespace StreamClass.Context
             modelBuilder.Entity<ModuleVideo>().HasKey(x => new { x.IdModule, x.IdVideo });
             modelBuilder.Entity<ModuleUtilisateur>().HasKey(x => new { x.IdModule, x.IdUtilisateur });
             modelBuilder.Entity<ModuleCompetence>().HasKey(x => new { x.IdModule, x.IdCompetence });
+            modelBuilder.Entity<SousThemeCompetence>().HasKey(x => new { x.IdSousTheme, x.IdCompetence });
         }
 
         public DbSet<Technologie> Technologies { get; set; }
@@ -48,5 +49,6 @@ namespace StreamClass.Context
         public DbSet<ModuleCompetence> ModulesCompetences { get; set; }
         public DbSet<SousTheme> SousThemes { get; set; }
         public DbSet<ThemeCompetence> ThemesCompetences { get; set; }
+        public DbSet<SousThemeCompetence> SousThemesCompetences { get; set; }
     }
 }
