@@ -20,6 +20,7 @@ namespace StreamClass.Models
         public virtual SousTheme SousTheme { get; set; }
 
         public virtual List<ModuleCompetence> ModulesCompetences { get; set; }
+        public virtual List<SousThemeCompetence> SousThemesCompetences { get; set; }
         #endregion
     }
 }
