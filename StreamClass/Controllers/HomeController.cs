@@ -10,6 +10,7 @@ using System.Linq;
 
 namespace StreamClass.Controllers
 {
+
     [Authorize]
     public class HomeController : Controller
     {
@@ -33,7 +34,17 @@ namespace StreamClass.Controllers
             return View();
         }
 
+        public IActionResult Abonnement()
+        {
+            return View();
+        }
+
         public IActionResult ParcoursPerso()
+        {
+            return View();
+        }
+
+        public IActionResult Cours()
         {
             return View();
         }
@@ -43,7 +54,7 @@ namespace StreamClass.Controllers
             return View();
         }
 
-        public IActionResult SelectionVideo()
+            public IActionResult SelectionVideo()
         {
             List<Video> listVideos = new List<Video>();
 
@@ -72,6 +83,11 @@ namespace StreamClass.Controllers
             return View();
         }
 
+        public IActionResult Facture()
+        {
+            return View();
+        }
+
         public IActionResult Mentions()
         {
             return View();
@@ -81,7 +97,6 @@ namespace StreamClass.Controllers
         {
             return View();
         }
-
         [AllowAnonymous]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

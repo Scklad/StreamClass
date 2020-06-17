@@ -1,11 +1,61 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Accueil";
 }
 
-<div class="text-center">
-    <h1 class="display-4">StreamClass !</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <br />
 
+<br />
+<div class="row">
+    <div class="col-xs-4 col-md-3 col-lg-3">
+        <img alt="Logo streamclass" width="380" height="200" src="@Url.Content("~/images/logo-streamclass.png")">
+    </div>
+    <div class="col-xs-4 col-md-6 col-lg-6">
+        <div class="text-center">
+            <br />
+            <h5>N'arrêtez jamais d'apprendre avec</h5>
+            <h1 class="display-4 title-accueil">StreamClass</h1>
+            <p>Apprentissages personnalisés, cours vidéos et classes virtuelles spécialisés en développement informatique et infrastructure</p>
+        </div>
+    </div>
+    <div class="col-xs-4 col-md-3 col-lg-3">
+        <br />
+        <br />
+        <img width="220" height="100" src="@Url.Content("~/images/azure.png")">
+    </div>
+</div>
+
+<div class="text-center">
+    <h2>Comment fonctionne StreamClass?</h2>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-xs-4 col-md-3 col-lg-4">
+        <div class="box text-center min-box">
+            <img alt="Logo streamclass" width="90" height="55" src="@Url.Content("~/images/apprentissage.png")">
+            <h4 class="titlebox-accueil">Apprentissage personnalisée</h4>
+            <p>Choisissez vos compétences, personnalisez votre parcours et accédez à des modules construits selon vos intérêts. <br />Streamclass vous garantit l'accès à des vidéos de qualité adaptées à vos besoins.</p>        
+        </div>
+    </div>
+    <div class="col-xs-4 col-md-6 col-lg-4">
+        <div class="box text-center min-box">
+            <img alt="Logo streamclass" width="90" height="55" src="@Url.Content("~/images/cours.png")">
+            <h4 class="titlebox-accueil">Cours vidéos en ligne</h4>
+            <p>Des cours précis, spécifiques à un sujet et inscrits dans la continuité du parcours que vous avez choisi. <br /> Apprenez à votre rythme et perfectionnez-vous grâce à des vidéos courtes, accessibles à tout moment et disponibles sur votre plateforme de streaming.</p>
+        </div>
+    </div>
+    <div class="col-xs-4 col-md-3 col-lg-4">
+        <div class="box text-center min-box">
+            <img alt="Logo streamclass" width="90" height="55" src="@Url.Content("~/images/classes.png")">
+            <h4 class="titlebox-accueil">Classes virtuelles</h4>
+            <p>Vous pourrez interagir, discuter et assister à des cours dans un environnement d’enseignement et d’apprentissage à distance avec des professionnels agréés tout en consultant les ressources d’apprentissage mise à votre disposition et en travailler en groupe.</p>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="text-center">
+    <button type="button" class="btn btn-primary btn-lg" onclick="window.location = '/Home/Abonnement'">Démarrer votre apprentissage</button>
     @Html.ActionLink("Liste de compétences", "Competence")
 </div>

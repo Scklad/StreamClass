@@ -1,0 +1,116 @@
+﻿@{
+    ViewData["Title"] = "Abonnement";
+}
+
+
+<br />
+<div class="row">
+    <div class="col-xs-4 col-md-3 col-lg-3">
+        <img alt="Logo streamclass" width="380" height="200" src="@Url.Content("~/images/logo-streamclass.png")">
+    </div>
+    <div class="col-xs-4 col-md-6 col-lg-6">
+        <div class="text-center">
+            <br />
+            <br />
+            <h1 class="display-4 title-accueil">Forfait StreamClass</h1>
+        </div>
+    </div>
+    <div class="col-xs-4 col-md-3 col-lg-3">
+        <br />
+        <br />
+        <img width="220" height="100" src="@Url.Content("~/images/azure.png")">
+    </div>
+</div>
+
+<div class="text-center">
+    <h2>Abonnez vous dès à présent et débloquer tout notre contenu</h2>
+</div>
+
+<br />
+
+<!--Bandeau abonnement-->
+<div class="container">
+    <div class="row box">
+        <div class="col">
+            <div class="text-center">
+                <h4 class="titlebox-accueil"><input type="radio" name="options" id="option1" autocomplete="off"> Forfait standard Mensuel</h4>
+                <!--<input type="radio" name="options" id="option2" autocomplete="off" checked>-->
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="text-center">
+                <br />
+                <p>Apprenez ce que vous voulez avec un accès illimité au contenu durant la période d'abonnement.</p>            
+            </div>
+        </div>
+        <div class="col">
+            <div class="text-center">
+                <h4 class="titlebox-accueil">12,99€/mois</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Bandeau paiement-->
+<br />
+<div class="container">
+    <div class='row'>
+        <div class='col-md-3'></div>
+        <div class='col-md-5 box'>
+            <form accept-charset="UTF-8" action="/" class="require-validation" data-cc-on-file="false" data-stripe-publishable-key="pk_bQQaTxnaZlzv4FnnuZ28LFHccVSaj" id="payment-form" method="post">
+                <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="_method" type="hidden" value="PUT" /><input name="authenticity_token" type="hidden" value="qLZ9cScer7ZxqulsUWazw4x3cSEzv899SP/7ThPCOV8=" /></div>
+                <div class='form-row'>
+                    <div class="text-center">
+                        <h2>Paiement par carte</h2>
+                    </div>
+                    <div class='col-xs-12 form-group required'>
+                        <label class='control-label panel-title'>Titulaire de la carte</label>
+                        <input class='form-control' size='45' type='text'>
+                    </div>
+                </div>
+                <div class='form-row'>
+                    <div class='col-xl-5 form-group required'>
+                        <label class='control-label panel-title'>Numéro de carte*</label>
+                            <input autocomplete='off' class='form-control card-number' size='15' type='text'>
+</div>
+                    <div class='col-xs-4 form-group expiration required'>
+                        <label class='control-label panel-title'>Expire fin*</label>
+                            <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text'>
+</div>
+                    <div class='col-xs-4 form-group expiration required'>
+                        <br />
+                        <input class='form-control card-expiry-year' placeholder='AAAA' size='4' type='text'>
+                    </div>
+                </div>
+                <div class='form-row'>
+                    <div class='col-xs-4 form-group cvc required'>
+                        <label class='control-label panel-title'>Code sécurité*</label>
+                        <input autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' size='4' type='text'>
+                    </div>
+                    <div class='col-xs-6 form-group expiration required'>
+                        <i>Il est constitué des 3 chiffres inscrits au dos de votre carte</i>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class='row'>
+        <div class='col-md-3'></div>
+        <div class='col-md-5 box'>
+            <h6>HT : 10,39 €</h6>
+            <h6>Taxes : 20 %</h6>
+            <hr />
+            <h5>Total TTC : 12,99 €</h5>
+        </div>
+    </div>
+</div>
+
+        <br />
+
+        <div class="text-center">
+            <button type="button" class="btn btn-primary btn-lg" onclick="window.location = '/Home/Facture'">Valider</button>
+            <button type="button" class="btn btn-secondary btn-lg" onclick="window.location = '/Home/'">Annuler</button>
+        </div>
