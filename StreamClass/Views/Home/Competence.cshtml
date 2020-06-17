@@ -3,16 +3,23 @@
 }
 
     <div class="text-center">
-        <h1 class="display-4">Liste des compétences</h1>
+        <br />
+        <h1 class="display-4 title-accueil">Sélectionnez vos compétences</h1>
         <br />
 
-        @foreach (var item in Model)
-        {
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label">@item.Nom</label>
+        <div class="row">
+            <div class="col-xs-6 col-md-6 col-lg-6 offset-md-3">
+                @foreach (var item in Model)
+                {
+                    <div class="box text-center">
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label">@item.Nom</label>
+                        </div>
+                    </div>
+                }
             </div>
-        }
+        </div>
 
-        @Html.ActionLink("Suivant", "ParcoursPerso")
+        <button type="button" class="btn btn-primary" onclick="window.location = '@Url.Action("SelectionModule", "Home")'">Suivant</button>
     </div>

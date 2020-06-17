@@ -2,9 +2,15 @@
     ViewData["Title"] = "Parcours";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Parcours perso</h1>
-    <br />
+    <div class="text-center">
+        <h1 class="display-4">Parcours perso</h1>
+        <br />
 
-    @Html.ActionLink("Commencer", "SelectionModule")
-</div>
+        <div class="list-group col-md-6 offset-md-3">
+
+            @foreach (var item in Model)
+            {
+                <a href="@Url.Action("SelectionModule", "Home")" class="list-group-item list-group-item-action">@item.Nom</a>
+            }
+        </div>
+    </div>

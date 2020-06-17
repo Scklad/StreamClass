@@ -23,7 +23,7 @@ namespace StreamClass.Controllers
 
         public IActionResult Competence()
         {
-            List<Competence> competences = new List<Competence>();
+            List<Competence> listCompetences = new List<Competence>();
 
             using (SQLServerContext db = new SQLServerContext())
             {
@@ -32,10 +32,10 @@ namespace StreamClass.Controllers
                 //           on comp.Id equals sousthem.IdCompetence
                 //           select comp;
 
-                competences = db.Competences.ToList();
+                listCompetences = db.Competences.ToList();
             }
 
-            return View(competences);
+            return View(listCompetences);
         }
 
         public IActionResult Abonnement()
@@ -43,10 +43,17 @@ namespace StreamClass.Controllers
             return View();
         }
 
-        public IActionResult ParcoursPerso()
-        {
-            return View();
-        }
+        //public IActionResult ParcoursPerso()
+        //{
+        //    List<Module> listModules = new List<Module>();
+
+        //    using (SQLServerContext db = new SQLServerContext())
+        //    {
+        //        listModules = db.Modules.ToList();
+        //    }
+
+        //    return View(listModules);
+        //}
 
         public IActionResult Cours()
         {
@@ -55,6 +62,15 @@ namespace StreamClass.Controllers
 
         public IActionResult SelectionModule()
         {
+            List<Module> listModules = new List<Module>();
+
+            using (SQLServerContext db = new SQLServerContext())
+            {
+                listModules = db.Modules.ToList();
+            }
+
+            return View(listModules);
+
             return View();
         }
 

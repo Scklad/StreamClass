@@ -2,9 +2,18 @@
     ViewData["Title"] = "Sélection module";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Sélection du module</h1>
-    <br />
+    <div class="text-center">
+        <br />
+        <h1 class="display-4 title-accueil">Sélectionnez le module</h1>
+        <br />
 
-    @Html.ActionLink("Redirection vers la liste des vidéos", "SelectionVideo")
-</div>
+        <div class="list-group col-md-6 offset-md-3">
+
+            @foreach (var item in Model)
+            {
+                <a href="@Url.Action("SelectionVideo", "Home")" class="list-group-item list-group-item-action">@item.Nom</a>
+            }
+        </div>
+
+        @*@Html.ActionLink("Redirection vers la liste des vidéos", "SelectionVideo")*@
+    </div>
