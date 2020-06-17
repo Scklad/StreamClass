@@ -23,15 +23,19 @@ namespace StreamClass.Controllers
 
         public IActionResult Competence()
         {
+            List<Competence> competences = new List<Competence>();
+
             using (SQLServerContext db = new SQLServerContext())
             {
-                var test = from comp in db.Competences
-                           join sousthem in db.SousThemesCompetences
-                           on comp.Id equals sousthem.IdCompetence
-                           select comp;
+                //var test = from comp in db.Competences
+                //           join sousthem in db.SousThemesCompetences
+                //           on comp.Id equals sousthem.IdCompetence
+                //           select comp;
+
+                competences = db.Competences.ToList();
             }
 
-            return View();
+            return View(competences);
         }
 
         public IActionResult Abonnement()

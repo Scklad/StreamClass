@@ -6,16 +6,13 @@
         <h1 class="display-4">Liste des compétences</h1>
         <br />
 
-        <!--
-            Pour chaque competence, mettre une checkbox
-
-            <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-      <label class="form-check-label" for="defaultCheck1">
-        Default checkbox
-      </label>
-    </div>
-            -->
+        @foreach (var item in Model)
+        {
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label">@item.Nom</label>
+            </div>
+        }
 
         @Html.ActionLink("Suivant", "ParcoursPerso")
     </div>
