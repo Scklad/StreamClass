@@ -31,6 +31,9 @@ namespace StreamClass.Controllers
                            select comp;
             }
 
+            return View();
+        }
+
         public IActionResult Abonnement()
         {
             return View();
