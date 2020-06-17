@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Sélection vidéo";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Sélection de la vidéo</h1>
+    <br />
+
+    <div class="list-group">
+        <form action="Video" method="POST">
+            @foreach (var item in Model)
+            {
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img width="200" height="150" src="https://static.wixstatic.com/media/0072e2_bfd4bf18f3e640a1afc289ecad6e1b62~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg" />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Titre</h5>
+                                <p class="card-text"><small class="text-muted">Durée : @item.Duree secondes</small></p>
+                                <a href="@Url.Action("Video", "Home", new { id = item.Id })" class="btn btn-primary" role="button" aria-pressed="true">Visionner</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </form>
+    </div>
+</div>
